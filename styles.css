@@ -1,16 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-*{
-    box-sizing: border-box;
+:root {
+  --left-bg-color: rgba(87, 84, 236, 0.7);
+  --right-bg-color: rgba(43, 43, 43, 0.7);
+  --left-btn-color: rgb(87, 84, 236);
+  --right-btn-color: rgb(28, 122, 28);
 }
 
-body{
-    font-family: 'Roboto', 'sans-serif';
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', 'sans-serif';
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+h1 {
+  font-size: 4rem;
+  color: #fff;
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+}
+.btn {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  border: 0.2rem solid white;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem;
+  width: 15rem;
+}
+.split.left .btn:hover {
+  background-color: var(--left-btn-color);
+  border-color: var(--left-btn-color);
+}
+.split.right .btn:hover {
+  background-color: var(--right-btn-color);
+  border-color: var(--right-btn-color);
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: #333;
+}
+.split {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+.split.left {
+  left: 0;
+  background-image: url('Images/PS5.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.split.left::before {
+  content: '';
+  background-color: var(--left-bg-color);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.split.right {
+  right: 0;
+  background-image: url('Images/Xbox X.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.right::before {
+  content: '';
+  background-color: var(--right-bg-color);
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
